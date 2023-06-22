@@ -10,7 +10,7 @@ import * as PostController from './controllers/PostController.js'
 import { postCreateValidator } from './validations/post.js'
 
 mongoose
-    .connect('mongodb+srv://admin:sanders025@cluster0.sjzrysu.mongodb.net/blog?retryWrites=true&w=majority')
+    .connect(process.env.MONGO_DB_URI)
     .then(() => console.log('SERVER OK'))
     .catch((err) => console.log('SERVER NOT OK', err))
 
